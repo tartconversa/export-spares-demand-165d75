@@ -1,0 +1,5 @@
+generation,firmware,required_group,part_id,parts_per_repair,min_qualification
+G1,F1,main,P2,1,basic
+G1,F1,main,P3,1,high
+G2,F2,main,P1,1,basic
+G2,F2,aux,P4,1,basic

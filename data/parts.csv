@@ -1,0 +1,6 @@
+part_id,unit_cost,cash_days,normal_days,expedite_days,expedite_cost
+P1,350,30,28,6,100
+P2,500,30,31,7,120
+P3,650,30,34,8,140
+P4,800,30,37,9,160
+P5,950,30,40,10,180

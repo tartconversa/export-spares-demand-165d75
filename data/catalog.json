@@ -1,0 +1,571 @@
+{
+  "title": "海外储能售后备件的隐性需求与保障方案",
+  "synthetic": true,
+  "tables": [
+    {
+      "name": "stations",
+      "description": "海外合成站点，均使用北京时间资料时刻。",
+      "columns": [
+        {
+          "name": "station_id",
+          "type": "string",
+          "description": "站",
+          "nullable": true
+        },
+        {
+          "name": "region",
+          "type": "string",
+          "description": "区域",
+          "nullable": true
+        },
+        {
+          "name": "qualification",
+          "type": "string",
+          "description": "资质",
+          "nullable": true
+        },
+        {
+          "name": "service_hours",
+          "type": "integer",
+          "description": "恢复时限小时",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "station_id"
+      ],
+      "references": [],
+      "path": "data/stations.csv",
+      "row_count": 5,
+      "sha256": "a3a626110c5241d61512b19862b34ab5985ec68ad0a46655a9fa828d1cf87019"
+    },
+    {
+      "name": "parts",
+      "description": "物料和订货。",
+      "columns": [
+        {
+          "name": "part_id",
+          "type": "string",
+          "description": "物料",
+          "nullable": true
+        },
+        {
+          "name": "unit_cost",
+          "type": "number",
+          "description": "单价",
+          "nullable": true
+        },
+        {
+          "name": "cash_days",
+          "type": "integer",
+          "description": "付款账期",
+          "nullable": true
+        },
+        {
+          "name": "normal_days",
+          "type": "integer",
+          "description": "常规交期",
+          "nullable": true
+        },
+        {
+          "name": "expedite_days",
+          "type": "integer",
+          "description": "加急交期",
+          "nullable": true
+        },
+        {
+          "name": "expedite_cost",
+          "type": "number",
+          "description": "单件加急费",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "part_id"
+      ],
+      "references": [],
+      "path": "data/parts.csv",
+      "row_count": 5,
+      "sha256": "db32164ab7de1e0bb82db061e2a78692b96d8ccd003fd5a7226e11063920e93a"
+    },
+    {
+      "name": "installed_base",
+      "description": "投运与保障设备。",
+      "columns": [
+        {
+          "name": "unit_id",
+          "type": "string",
+          "description": "设备",
+          "nullable": true
+        },
+        {
+          "name": "station_id",
+          "type": "string",
+          "description": "服务站",
+          "nullable": true
+        },
+        {
+          "name": "generation",
+          "type": "string",
+          "description": "代际",
+          "nullable": true
+        },
+        {
+          "name": "firmware",
+          "type": "string",
+          "description": "固件",
+          "nullable": true
+        },
+        {
+          "name": "commissioned",
+          "type": "date",
+          "description": "投运",
+          "nullable": true
+        },
+        {
+          "name": "warranty_end",
+          "type": "date",
+          "description": "保障结束",
+          "nullable": true
+        },
+        {
+          "name": "environment",
+          "type": "string",
+          "description": "环境",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "unit_id"
+      ],
+      "references": [
+        {
+          "column": "station_id",
+          "target_table": "stations",
+          "target_column": "station_id"
+        }
+      ],
+      "path": "data/installed_base.csv",
+      "row_count": 200,
+      "sha256": "d84ddb8a1e887239a4ba1ec133429528c73f5e0b7bba75d7aaee42ad7cc88e3c"
+    },
+    {
+      "name": "work_orders",
+      "description": "真实需求观察含未修复工单。",
+      "columns": [
+        {
+          "name": "order_id",
+          "type": "string",
+          "description": "工单",
+          "nullable": true
+        },
+        {
+          "name": "unit_id",
+          "type": "string",
+          "description": "设备",
+          "nullable": true
+        },
+        {
+          "name": "failed_at",
+          "type": "datetime",
+          "description": "故障起点",
+          "nullable": true
+        },
+        {
+          "name": "opened_at",
+          "type": "datetime",
+          "description": "报修",
+          "nullable": true
+        },
+        {
+          "name": "repair_at",
+          "type": "datetime",
+          "description": "恢复或未知",
+          "nullable": true
+        },
+        {
+          "name": "state",
+          "type": "string",
+          "description": "closed或waiting",
+          "nullable": true
+        },
+        {
+          "name": "consequence",
+          "type": "integer",
+          "description": "服务后果权重",
+          "nullable": true
+        },
+        {
+          "name": "available_at",
+          "type": "datetime",
+          "description": "可知时点",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "order_id"
+      ],
+      "references": [
+        {
+          "column": "unit_id",
+          "target_table": "installed_base",
+          "target_column": "unit_id"
+        }
+      ],
+      "path": "data/work_orders.csv",
+      "row_count": 100,
+      "sha256": "c975469bf326558200149338e937b6f694a7b1a31ce0e6553a09c149169dd213"
+    },
+    {
+      "name": "stock_events",
+      "description": "本包起始库存零，事件构成全部现存库存。",
+      "columns": [
+        {
+          "name": "stock_event_id",
+          "type": "string",
+          "description": "事件",
+          "nullable": true
+        },
+        {
+          "name": "station_id",
+          "type": "string",
+          "description": "站",
+          "nullable": true
+        },
+        {
+          "name": "part_id",
+          "type": "string",
+          "description": "物料",
+          "nullable": true
+        },
+        {
+          "name": "occurred_at",
+          "type": "datetime",
+          "description": "时点",
+          "nullable": true
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "变化原因",
+          "nullable": true
+        },
+        {
+          "name": "quantity",
+          "type": "integer",
+          "description": "有符号数量",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "stock_event_id"
+      ],
+      "references": [
+        {
+          "column": "station_id",
+          "target_table": "stations",
+          "target_column": "station_id"
+        },
+        {
+          "column": "part_id",
+          "target_table": "parts",
+          "target_column": "part_id"
+        }
+      ],
+      "path": "data/stock_events.csv",
+      "row_count": 153,
+      "sha256": "a728a925bd2b8df337eea4a3af3e26f1069fd23982cd6071909838ff257837c8"
+    },
+    {
+      "name": "part_uses",
+      "description": "领件到工单，一工单可重复领退。",
+      "columns": [
+        {
+          "name": "use_id",
+          "type": "string",
+          "description": "记录",
+          "nullable": true
+        },
+        {
+          "name": "order_id",
+          "type": "string",
+          "description": "工单",
+          "nullable": true
+        },
+        {
+          "name": "station_id",
+          "type": "string",
+          "description": "站",
+          "nullable": true
+        },
+        {
+          "name": "part_id",
+          "type": "string",
+          "description": "物料",
+          "nullable": true
+        },
+        {
+          "name": "quantity",
+          "type": "integer",
+          "description": "数量",
+          "nullable": true
+        },
+        {
+          "name": "occurred_at",
+          "type": "datetime",
+          "description": "领退时点",
+          "nullable": true
+        },
+        {
+          "name": "kind",
+          "type": "string",
+          "description": "issue或return_accepted",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "use_id"
+      ],
+      "references": [
+        {
+          "column": "order_id",
+          "target_table": "work_orders",
+          "target_column": "order_id"
+        },
+        {
+          "column": "part_id",
+          "target_table": "parts",
+          "target_column": "part_id"
+        }
+      ],
+      "path": "data/part_uses.csv",
+      "row_count": 128,
+      "sha256": "82cbe40dc043989dbe4ae5c49704389b12cbe0b0f21db25188d79296f23ba38c"
+    },
+    {
+      "name": "compatibility",
+      "description": "相容配套，其中G2需主件与P4配套；high站可用P3替代。",
+      "columns": [
+        {
+          "name": "generation",
+          "type": "string",
+          "description": "代际",
+          "nullable": true
+        },
+        {
+          "name": "firmware",
+          "type": "string",
+          "description": "固件",
+          "nullable": true
+        },
+        {
+          "name": "required_group",
+          "type": "string",
+          "description": "配套组",
+          "nullable": true
+        },
+        {
+          "name": "part_id",
+          "type": "string",
+          "description": "物料",
+          "nullable": true
+        },
+        {
+          "name": "parts_per_repair",
+          "type": "integer",
+          "description": "数量",
+          "nullable": true
+        },
+        {
+          "name": "min_qualification",
+          "type": "string",
+          "description": "资质",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "generation",
+        "firmware",
+        "required_group",
+        "part_id"
+      ],
+      "references": [
+        {
+          "column": "part_id",
+          "target_table": "parts",
+          "target_column": "part_id"
+        }
+      ],
+      "path": "data/compatibility.csv",
+      "row_count": 4,
+      "sha256": "f4fcfd4be74351b854b12ad9d3a2880bd9d0ddbd1bad822b6dec03da72df51dc"
+    },
+    {
+      "name": "shipments",
+      "description": "已下单在途物料，同批共享路线风险。",
+      "columns": [
+        {
+          "name": "shipment_id",
+          "type": "string",
+          "description": "批次",
+          "nullable": true
+        },
+        {
+          "name": "part_id",
+          "type": "string",
+          "description": "物料",
+          "nullable": true
+        },
+        {
+          "name": "station_id",
+          "type": "string",
+          "description": "目的站",
+          "nullable": true
+        },
+        {
+          "name": "quantity",
+          "type": "integer",
+          "description": "数量",
+          "nullable": true
+        },
+        {
+          "name": "earliest",
+          "type": "date",
+          "description": "最早到日",
+          "nullable": true
+        },
+        {
+          "name": "latest",
+          "type": "date",
+          "description": "最迟到日",
+          "nullable": true
+        },
+        {
+          "name": "route",
+          "type": "string",
+          "description": "路线",
+          "nullable": true
+        },
+        {
+          "name": "redirect_cost",
+          "type": "number",
+          "description": "改港费",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "shipment_id"
+      ],
+      "references": [
+        {
+          "column": "part_id",
+          "target_table": "parts",
+          "target_column": "part_id"
+        },
+        {
+          "column": "station_id",
+          "target_table": "stations",
+          "target_column": "station_id"
+        }
+      ],
+      "path": "data/shipments.csv",
+      "row_count": 8,
+      "sha256": "d21c912d8c684ea5fa0bce6a310695d86f1c93b1ab2eec4c1bd95ab378a33954"
+    },
+    {
+      "name": "stockouts",
+      "description": "独立登记的缺货区间，库存事件保留原数量。",
+      "columns": [
+        {
+          "name": "station_id",
+          "type": "string",
+          "description": "站",
+          "nullable": true
+        },
+        {
+          "name": "part_id",
+          "type": "string",
+          "description": "物料",
+          "nullable": true
+        },
+        {
+          "name": "start",
+          "type": "date",
+          "description": "开始",
+          "nullable": true
+        },
+        {
+          "name": "end",
+          "type": "date",
+          "description": "结束",
+          "nullable": true
+        },
+        {
+          "name": "reason",
+          "type": "string",
+          "description": "原因",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "station_id",
+        "part_id",
+        "start"
+      ],
+      "references": [],
+      "path": "data/stockouts.csv",
+      "row_count": 2,
+      "sha256": "94e21537957cb2a5eb837e614d58cd171261cd0250a23f656a5aa4de5b52996b"
+    },
+    {
+      "name": "plans",
+      "description": "未来装机和可比较风险情景。",
+      "columns": [
+        {
+          "name": "scenario_id",
+          "type": "string",
+          "description": "假设",
+          "nullable": true
+        },
+        {
+          "name": "station_id",
+          "type": "string",
+          "description": "站",
+          "nullable": true
+        },
+        {
+          "name": "new_units",
+          "type": "integer",
+          "description": "新增设备",
+          "nullable": true
+        },
+        {
+          "name": "route_delay_days",
+          "type": "integer",
+          "description": "区域共同迟延",
+          "nullable": true
+        },
+        {
+          "name": "failure_multiplier",
+          "type": "number",
+          "description": "区域共同需求倍数",
+          "nullable": true
+        },
+        {
+          "name": "budget",
+          "type": "number",
+          "description": "本方案总预算",
+          "nullable": true
+        }
+      ],
+      "key": [
+        "scenario_id",
+        "station_id"
+      ],
+      "references": [],
+      "path": "data/plans.csv",
+      "row_count": 15,
+      "sha256": "f1cdad391dd191ac7276a2fbc1c98faf8c7bd20edc03e37723a2e38d01c38c56"
+    }
+  ]
+}

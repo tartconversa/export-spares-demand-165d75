@@ -1,0 +1,16 @@
+scenario_id,station_id,new_units,route_delay_days,failure_multiplier,budget
+normal,S1,12,0,1,60000
+normal,S2,14,0,1,60000
+normal,S3,16,0,1,60000
+normal,S4,18,0,1,60000
+normal,S5,20,0,1,60000
+port_hold,S1,12,14,1.3,60000
+port_hold,S2,14,14,1.3,60000
+port_hold,S3,16,14,1.3,60000
+port_hold,S4,18,14,1.3,60000
+port_hold,S5,20,14,1.3,60000
+slow_start,S1,12,5,0.8,60000
+slow_start,S2,14,5,0.8,60000
+slow_start,S3,16,5,0.8,60000
+slow_start,S4,18,5,0.8,60000
+slow_start,S5,20,5,0.8,60000

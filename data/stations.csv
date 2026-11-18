@@ -1,0 +1,6 @@
+station_id,region,qualification,service_hours
+S1,R2,high,48
+S2,R1,high,48
+S3,R2,high,48
+S4,R1,basic,72
+S5,R2,basic,72
