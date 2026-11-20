@@ -1,0 +1,275 @@
+{
+  "cutoff": "2025-04-21 08:00:00+08:00",
+  "scenario_id": "normal",
+  "route_delay_days": 0,
+  "budget": 60000.0,
+  "horizon_days": 90,
+  "part_demand": [
+    {
+      "station_id": "S1",
+      "part_id": "P1",
+      "demand_mean": 23.2,
+      "demand_p25": 16.0,
+      "demand_p75": 29.0,
+      "demand_p05": 8.0,
+      "demand_p95": 43.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S1",
+      "part_id": "P2",
+      "demand_mean": 24.66,
+      "demand_p25": 18.0,
+      "demand_p75": 31.0,
+      "demand_p05": 11.0,
+      "demand_p95": 42.049999999999955,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S1",
+      "part_id": "P4",
+      "demand_mean": 23.2,
+      "demand_p25": 16.0,
+      "demand_p75": 29.0,
+      "demand_p05": 8.0,
+      "demand_p95": 43.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P1",
+      "demand_mean": 28.885,
+      "demand_p25": 21.0,
+      "demand_p75": 35.0,
+      "demand_p05": 15.0,
+      "demand_p95": 50.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P2",
+      "demand_mean": 18.963333333333335,
+      "demand_p25": 11.0,
+      "demand_p75": 24.0,
+      "demand_p05": 6.0,
+      "demand_p95": 41.049999999999955,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P4",
+      "demand_mean": 28.885,
+      "demand_p25": 21.0,
+      "demand_p75": 35.0,
+      "demand_p05": 15.0,
+      "demand_p95": 50.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S3",
+      "part_id": "P1",
+      "demand_mean": 24.655,
+      "demand_p25": 17.0,
+      "demand_p75": 31.0,
+      "demand_p05": 11.0,
+      "demand_p95": 45.049999999999955,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S3",
+      "part_id": "P2",
+      "demand_mean": 23.953333333333333,
+      "demand_p25": 17.0,
+      "demand_p75": 30.0,
+      "demand_p05": 9.0,
+      "demand_p95": 41.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S3",
+      "part_id": "P4",
+      "demand_mean": 24.655,
+      "demand_p25": 17.0,
+      "demand_p75": 31.0,
+      "demand_p05": 11.0,
+      "demand_p95": 45.049999999999955,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P1",
+      "demand_mean": 23.976666666666667,
+      "demand_p25": 16.0,
+      "demand_p75": 30.0,
+      "demand_p05": 9.0,
+      "demand_p95": 46.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P2",
+      "demand_mean": 20.325,
+      "demand_p25": 13.0,
+      "demand_p75": 26.0,
+      "demand_p05": 7.0,
+      "demand_p95": 39.049999999999955,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P4",
+      "demand_mean": 23.976666666666667,
+      "demand_p25": 16.0,
+      "demand_p75": 30.0,
+      "demand_p05": 9.0,
+      "demand_p95": 46.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P1",
+      "demand_mean": 24.416666666666668,
+      "demand_p25": 17.0,
+      "demand_p75": 30.0,
+      "demand_p05": 10.0,
+      "demand_p95": 45.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P2",
+      "demand_mean": 23.715,
+      "demand_p25": 17.0,
+      "demand_p75": 29.0,
+      "demand_p05": 10.0,
+      "demand_p95": 42.049999999999955,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P4",
+      "demand_mean": 24.416666666666668,
+      "demand_p25": 17.0,
+      "demand_p75": 30.0,
+      "demand_p05": 10.0,
+      "demand_p95": 45.0,
+      "includes_backlog": true
+    }
+  ],
+  "actions": [
+    {
+      "kind": "redirect",
+      "station_id": "S5",
+      "part_id": "P2",
+      "quantity": 6,
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "eta_earliest": "2025-05-06 00:00:00+08:00",
+      "eta_latest": "2025-05-21 00:00:00+08:00",
+      "ref": "H1",
+      "detail": "批次 H1 改港 S2->S5"
+    },
+    {
+      "kind": "redirect",
+      "station_id": "S5",
+      "part_id": "P4",
+      "quantity": 6,
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "eta_earliest": "2025-05-06 00:00:00+08:00",
+      "eta_latest": "2025-05-21 00:00:00+08:00",
+      "ref": "H3",
+      "detail": "批次 H3 改港 S4->S5"
+    },
+    {
+      "kind": "redirect",
+      "station_id": "S5",
+      "part_id": "P1",
+      "quantity": 6,
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "eta_earliest": "2025-05-06 00:00:00+08:00",
+      "eta_latest": "2025-05-21 00:00:00+08:00",
+      "ref": "H8",
+      "detail": "批次 H8 改港 S4->S5"
+    },
+    {
+      "kind": "redirect",
+      "station_id": "S5",
+      "part_id": "P2",
+      "quantity": 6,
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "eta_earliest": "2025-05-06 00:00:00+08:00",
+      "eta_latest": "2025-05-21 00:00:00+08:00",
+      "ref": "H5",
+      "detail": "批次 H5 改港 S1->S5"
+    },
+    {
+      "kind": "redirect",
+      "station_id": "S5",
+      "part_id": "P4",
+      "quantity": 6,
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "eta_earliest": "2025-05-06 00:00:00+08:00",
+      "eta_latest": "2025-05-21 00:00:00+08:00",
+      "ref": "H7",
+      "detail": "批次 H7 改港 S3->S5"
+    },
+    {
+      "kind": "normal",
+      "station_id": "S2",
+      "part_id": "P1",
+      "quantity": 48,
+      "unit_cost": 350.0,
+      "fee": 0.0,
+      "eta_earliest": "2025-05-19 08:00:00+08:00",
+      "eta_latest": "2025-05-19 08:00:00+08:00",
+      "ref": "normal",
+      "detail": "normal 交期 28 天，补 P95 缺口 48 件"
+    },
+    {
+      "kind": "expedite",
+      "station_id": "S3",
+      "part_id": "P2",
+      "quantity": 34,
+      "unit_cost": 500.0,
+      "fee": 4080.0,
+      "eta_earliest": "2025-04-28 08:00:00+08:00",
+      "eta_latest": "2025-04-28 08:00:00+08:00",
+      "ref": "expedite",
+      "detail": "expedite 交期 7 天，补 P95 缺口 34 件"
+    },
+    {
+      "kind": "expedite",
+      "station_id": "S1",
+      "part_id": "P2",
+      "quantity": 29,
+      "unit_cost": 500.0,
+      "fee": 3480.0,
+      "eta_earliest": "2025-04-28 08:00:00+08:00",
+      "eta_latest": "2025-04-28 08:00:00+08:00",
+      "ref": "expedite",
+      "detail": "expedite 交期 7 天，补 P95 缺口 29 件"
+    },
+    {
+      "kind": "redirect",
+      "station_id": "S1",
+      "part_id": "P1",
+      "quantity": 6,
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "eta_earliest": "2025-05-06 00:00:00+08:00",
+      "eta_latest": "2025-05-21 00:00:00+08:00",
+      "ref": "H4",
+      "detail": "批次 H4 改港 S5->S1"
+    }
+  ],
+  "evaluation": {
+    "on_time_weighted": 0.6934183985970492,
+    "on_time_unweighted": 0.6917699953302603,
+    "expected_backlog_units": 55.39333333333333,
+    "cash_committed": 59460.0
+  }
+}

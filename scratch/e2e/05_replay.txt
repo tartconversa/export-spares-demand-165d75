@@ -1,0 +1,170 @@
+# 季度回看（回看时点 2025-06-05T08:00:00+08:00）
+
+## 新观测概览
+{
+  "new_demand": [
+    {
+      "station_id": "S3",
+      "part_id": "P4",
+      "qty": 1,
+      "order_id": "XW1"
+    },
+    {
+      "station_id": "S3",
+      "part_id": "P1",
+      "qty": 1,
+      "order_id": "XW1"
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P4",
+      "qty": 1,
+      "order_id": "XW2"
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P1",
+      "qty": 1,
+      "order_id": "XW2"
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P4",
+      "qty": 1,
+      "order_id": "XW3"
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P1",
+      "qty": 1,
+      "order_id": "XW3"
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P2",
+      "qty": 1,
+      "order_id": "XW4"
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P2",
+      "qty": 1,
+      "order_id": "XW5"
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P2",
+      "qty": 1,
+      "order_id": "XW6"
+    },
+    {
+      "station_id": "S1",
+      "part_id": "P4",
+      "qty": 1,
+      "order_id": "XW7"
+    },
+    {
+      "station_id": "S1",
+      "part_id": "P1",
+      "qty": 1,
+      "order_id": "XW7"
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P2",
+      "qty": 1,
+      "order_id": "XW8"
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P4",
+      "qty": 1,
+      "order_id": "XW9"
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P1",
+      "qty": 1,
+      "order_id": "XW9"
+    },
+    {
+      "station_id": "S1",
+      "part_id": "P4
+
+## 缺口归因（需求误差/兼容判断/履约变化）
+station_id part_id  old_mean  scaled_p05  scaled_p95  elapsed_days  actual_new_demand       gap_category                                                         reason
+        S1      P1     13.84        2.08       11.28            45                  2       demand_error 截至回看点 45 天实际新增需求 2，落在按时长折算后的区间 [2.1, 11.3] 之外（原 90 天区间均值 13.8）
+        S1      P2     14.95        3.27       11.05            45                  0       demand_error 截至回看点 45 天实际新增需求 0，落在按时长折算后的区间 [3.3, 11.0] 之外（原 90 天区间均值 14.9）
+        S1      P4     13.84        2.08       11.28            45                  2       demand_error 截至回看点 45 天实际新增需求 2，落在按时长折算后的区间 [2.1, 11.3] 之外（原 90 天区间均值 13.8）
+        S2      P1     18.74        4.60       13.80            45                  3       demand_error 截至回看点 45 天实际新增需求 3，落在按时长折算后的区间 [4.6, 13.8] 之外（原 90 天区间均值 18.7）
+        S2      P2     12.50        0.95       10.85            45                  1 fulfillment_change                                     需求在区间内且供给未见延期，按履约变化登记待人工复核
+        S2      P4     18.74        4.60       13.80            45                  3       demand_error 截至回看点 45 天实际新增需求 3，落在按时长折算后的区间 [4.6, 13.8] 之外（原 90 天区间均值 18.7）
+        S3      P1     14.96        3.27       11.04            45                  1       demand_error 截至回看点 45 天实际新增需求 1，落在按时长折算后的区间 [3.3, 11.0] 之外（原 90 天区间均值 15.0）
+        S3      P2     13.92        3.48       10.55            45                  0       demand_error 截至回看点 45 天实际新增需求 0，落在按时长折算后的区间 [3.5, 10.6] 之外（原 90 天区间均值 13.9）
+        S3      P4     14.96        3.27       11.04            45                  1       demand_error 截至回看点 45 天实际新增需求 1，落在按时长折算后的区间 [3.3, 11.0] 之外（原 90 天区间均值 15.0）
+        S4      P1     13.99        2.05       11.24            45                  1       demand_error 截至回看点 45 天实际新增需求 1，落在按时长折算后的区间 [2.1, 11.2] 之外（原 90 天区间均值 14.0）
+        S4      P2     13.43        2.17       11.36            45                  3   compat_judgement                           1 个新工单在 P2 有库存时仍未领用，指向固件/资质/配套兼容判断偏差
+        S4      P4     13.99        2.05       11.24            45                  1       demand_error 截至回看点 45 天实际新增需求 1，落在按时长折算后的区间 [2.1, 11.2] 之外（原 90 天区间均值 14.0）
+        S5      P1     15.11        3.24       11.05            45                  1       demand_error 截至回看点 45 天实际新增需求 1，落在按时长折算后的区间 [3.2, 11.0] 之外（原 90 天区间均值 15.1）
+        S5      P2     13.95        2.77       10.55            45                  0       demand_error 截至回看点 45 天实际新增需求 0，落在按时长折算后的区间 [2.8, 10.5] 之外（原 90 天区间均值 13.9）
+        S5      P4     15.11        3.24       11.05            45                  1       demand_error 截至回看点 45 天实际新增需求 1，落在按时长折算后的区间 [3.2, 11.0] 之外（原 90 天区间均值 15.1）
+
+## 承诺兑现状态（两端保障变化）
+commitment_id     kind from to part_id  quantity                       eta  arrived_by_review
+        C0001 redirect    - S2      P1         6 2025-05-21 00:00:00+08:00               True
+        C0002 redirect    - S2      P1         6 2025-05-21 00:00:00+08:00               True
+        C0003 redirect    - S3      P2         6 2025-05-21 00:00:00+08:00               True
+        C0004 redirect    - S1      P4         6 2025-05-21 00:00:00+08:00               True
+        C0005 purchase    - S5      P2        13 2025-04-28 08:00:00+08:00               True
+        C0006 purchase    - S3      P2        13 2025-04-28 08:00:00+08:00               True
+        C0007 purchase    - S4      P2        13 2025-04-28 08:00:00+08:00               True
+        C0008 purchase    - S1      P2         7 2025-04-28 08:00:00+08:00               True
+        C0009 purchase    - S2      P1        25 2025-04-27 08:00:00+08:00               True
+        C0010 purchase    - S2      P2         7 2025-04-28 08:00:00+08:00               True
+        C0011 purchase    - S2      P4        14 2025-04-30 08:00:00+08:00               True
+
+## 用新资料重评原方案（原预测快照保留不变）
+{
+  "on_time_weighted": 0.7205182463823175,
+  "on_time_unweighted": 0.707974126275662,
+  "expected_backlog_units": 0.0,
+  "cash_committed": 59950.0,
+  "station_metrics": [
+    {
+      "station_id": "S1",
+      "on_time_weighted": 0.7285212109455852,
+      "on_time_unweighted": 0.7003491180798196,
+      "expected_backlog_units": 0.0
+    },
+    {
+      "station_id": "S2",
+      "on_time_weighted": 0.5758474761856057,
+      "on_time_unweighted": 0.6044111979213005,
+      "expected_backlog_units": 0.0
+    },
+    {
+      "station_id": "S3",
+      "on_time_weighted": 0.6388330635392997,
+      "on_time_unweighted": 0.7110788253993169,
+      "expected_backlog_units": 0.0
+    },
+    {
+      "station_id": "S4",
+      "on_time_weighted": 0.8281412235578166,
+      "on_time_unweighted": 0.7842265513946924,
+      "expected_backlog_units": 0.0
+    },
+    {
+      "station_id": "S5",
+      "on_time_weighted": 0.7937469110968823,
+      "on_time_unweighted": 0.7233950749949076,
+      "expected_backlog_units": 0.0
+    }
+  ]
+}
+
+## 回看口径假设
+- 回看只使用 review_at 时点 available_at/occurred_at 不晚于该时点的资料；
+- 返修件以 return_accepted 对应的 stock_events(return) 作为验收合格回库依据，未验收的在修件不回库；
+- 区间内缺口先判需求误差，再判兼容/履约，避免同一缺口重复归因；
+- 原预测快照不可变，重预测结果另行保存，差异即模型/履约学习信号。

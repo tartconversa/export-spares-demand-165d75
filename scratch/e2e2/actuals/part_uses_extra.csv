@@ -1,0 +1,4 @@
+use_id,order_id,station_id,part_id,quantity,occurred_at,kind
+XPU1,W6,S4,P1,1,2025-04-24T16:00:00+08:00,return_accepted
+XPU2,W12,S1,P1,1,2025-05-26T16:00:00+08:00,return_accepted
+XPU3,W22,S1,P1,1,2025-05-12T16:00:00+08:00,return_accepted

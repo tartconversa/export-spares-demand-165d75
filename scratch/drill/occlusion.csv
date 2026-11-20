@@ -1,0 +1,32 @@
+order_id,station_id,required_group,candidate_parts,failed_at,state,consequence,occlusion_cause,evidence
+W7,S1,main,"P2,P3",2025-03-09 08:00:00+08:00,waiting,1,backlog_reason_unknown,"{'P2': 15, 'P3': 15}"
+W14,S5,main,P1,2025-03-11 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P1': 14}
+W14,S5,aux,P4,2025-03-11 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 14}
+W21,S4,main,P2,2025-03-14 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P2': 13}
+W28,S3,main,P1,2025-03-16 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P1': 14}
+W28,S3,aux,P4,2025-03-16 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 13}
+W35,S2,main,"P2,P3",2025-03-18 08:00:00+08:00,waiting,1,backlog_reason_unknown,"{'P2': 12, 'P3': 15}"
+W42,S1,main,P1,2025-03-21 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P1': 11}
+W42,S1,aux,P4,2025-03-21 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 11}
+W49,S5,main,P2,2025-03-23 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P2': 11}
+W50,S2,main,P1,2025-03-23 08:00:00+08:00,waiting,1,stockout_registered,P1:unavailable
+W50,S2,aux,P4,2025-03-23 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 11}
+W56,S4,main,P1,2025-03-25 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P1': 11}
+W56,S4,aux,P4,2025-03-25 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 10}
+W60,S2,main,P1,2025-03-27 08:00:00+08:00,waiting,1,stockout_registered,P1:unavailable
+W60,S2,aux,P4,2025-03-27 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 11}
+W63,S3,main,"P2,P3",2025-03-28 08:00:00+08:00,waiting,3,backlog_reason_unknown,"{'P2': 9, 'P3': 15}"
+W70,S2,main,P1,2025-03-30 08:00:00+08:00,waiting,1,stockout_registered,P1:unavailable
+W70,S2,aux,P4,2025-03-30 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 11}
+W77,S1,main,"P2,P3",2025-04-01 08:00:00+08:00,waiting,1,backlog_reason_unknown,"{'P2': 9, 'P3': 15}"
+W80,S2,main,P1,2025-04-02 08:00:00+08:00,waiting,1,stockout_registered,P1:unavailable
+W80,S2,aux,P4,2025-04-02 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 11}
+W84,S5,main,P1,2025-04-04 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P1': 10}
+W84,S5,aux,P4,2025-04-04 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 8}
+W90,S2,main,P1,2025-04-06 08:00:00+08:00,waiting,3,stockout_registered,P1:unavailable
+W90,S2,aux,P4,2025-04-06 08:00:00+08:00,waiting,3,backlog_reason_unknown,{'P4': 11}
+W91,S4,main,P2,2025-04-06 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P2': 7}
+W98,S3,main,P1,2025-04-08 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P1': 9}
+W98,S3,aux,P4,2025-04-08 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 7}
+W100,S2,main,P1,2025-04-09 08:00:00+08:00,waiting,1,stockout_registered,P1:unavailable
+W100,S2,aux,P4,2025-04-09 08:00:00+08:00,waiting,1,backlog_reason_unknown,{'P4': 11}

@@ -10,3 +10,7 @@ coverage/
 __pycache__/
 *.py[cod]
 .DS_Store
+# 探索性分析与演练运行状态（非交付物）
+scratch/
+drill_state/
+*.html

@@ -1,0 +1,1 @@
+HTML 演练报告已生成：/workspace/scratch/e2e/report.html

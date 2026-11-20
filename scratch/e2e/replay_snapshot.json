@@ -1,0 +1,193 @@
+{
+  "review_at": "2025-06-05 08:00:00+08:00",
+  "new_evaluation": {
+    "on_time_weighted": 0.7205182463823175,
+    "on_time_unweighted": 0.707974126275662,
+    "expected_backlog_units": 0.0,
+    "cash_committed": 59950.0,
+    "station_metrics": [
+      {
+        "station_id": "S1",
+        "on_time_weighted": 0.7285212109455852,
+        "on_time_unweighted": 0.7003491180798196,
+        "expected_backlog_units": 0.0
+      },
+      {
+        "station_id": "S2",
+        "on_time_weighted": 0.5758474761856057,
+        "on_time_unweighted": 0.6044111979213005,
+        "expected_backlog_units": 0.0
+      },
+      {
+        "station_id": "S3",
+        "on_time_weighted": 0.6388330635392997,
+        "on_time_unweighted": 0.7110788253993169,
+        "expected_backlog_units": 0.0
+      },
+      {
+        "station_id": "S4",
+        "on_time_weighted": 0.8281412235578166,
+        "on_time_unweighted": 0.7842265513946924,
+        "expected_backlog_units": 0.0
+      },
+      {
+        "station_id": "S5",
+        "on_time_weighted": 0.7937469110968823,
+        "on_time_unweighted": 0.7233950749949076,
+        "expected_backlog_units": 0.0
+      }
+    ]
+  },
+  "new_part_demand": [
+    {
+      "station_id": "S1",
+      "part_id": "P1",
+      "demand_mean": 5.8815,
+      "demand_p25": 4.0,
+      "demand_p75": 7.0,
+      "demand_p05": 2.0,
+      "demand_p95": 10.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S1",
+      "part_id": "P2",
+      "demand_mean": 5.49575,
+      "demand_p25": 4.0,
+      "demand_p75": 7.0,
+      "demand_p05": 3.0,
+      "demand_p95": 9.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S1",
+      "part_id": "P4",
+      "demand_mean": 5.8815,
+      "demand_p25": 4.0,
+      "demand_p75": 7.0,
+      "demand_p05": 2.0,
+      "demand_p95": 10.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P1",
+      "demand_mean": 12.8695,
+      "demand_p25": 11.0,
+      "demand_p75": 14.0,
+      "demand_p05": 9.0,
+      "demand_p95": 17.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P2",
+      "demand_mean": 6.29925,
+      "demand_p25": 4.0,
+      "demand_p75": 8.0,
+      "demand_p05": 3.0,
+      "demand_p95": 11.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S2",
+      "part_id": "P4",
+      "demand_mean": 12.8695,
+      "demand_p25": 11.0,
+      "demand_p75": 14.0,
+      "demand_p05": 9.0,
+      "demand_p95": 17.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S3",
+      "part_id": "P1",
+      "demand_mean": 6.99975,
+      "demand_p25": 5.0,
+      "demand_p75": 9.0,
+      "demand_p05": 4.0,
+      "demand_p95": 11.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S3",
+      "part_id": "P2",
+      "demand_mean": 4.617,
+      "demand_p25": 3.0,
+      "demand_p75": 6.0,
+      "demand_p05": 2.0,
+      "demand_p95": 8.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S3",
+      "part_id": "P4",
+      "demand_mean": 6.99975,
+      "demand_p25": 5.0,
+      "demand_p75": 9.0,
+      "demand_p05": 4.0,
+      "demand_p95": 11.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P1",
+      "demand_mean": 8.00525,
+      "demand_p25": 6.0,
+      "demand_p75": 10.0,
+      "demand_p05": 4.0,
+      "demand_p95": 12.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P2",
+      "demand_mean": 8.344,
+      "demand_p25": 6.0,
+      "demand_p75": 10.0,
+      "demand_p05": 5.0,
+      "demand_p95": 13.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S4",
+      "part_id": "P4",
+      "demand_mean": 8.00525,
+      "demand_p25": 6.0,
+      "demand_p75": 10.0,
+      "demand_p05": 4.0,
+      "demand_p95": 12.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P1",
+      "demand_mean": 8.134,
+      "demand_p25": 6.0,
+      "demand_p75": 10.0,
+      "demand_p05": 5.0,
+      "demand_p95": 12.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P2",
+      "demand_mean": 4.73875,
+      "demand_p25": 3.0,
+      "demand_p75": 6.0,
+      "demand_p05": 2.0,
+      "demand_p95": 8.0,
+      "includes_backlog": true
+    },
+    {
+      "station_id": "S5",
+      "part_id": "P4",
+      "demand_mean": 8.134,
+      "demand_p25": 6.0,
+      "demand_p75": 10.0,
+      "demand_p05": 5.0,
+      "demand_p95": 12.0,
+      "includes_backlog": true
+    }
+  ]
+}

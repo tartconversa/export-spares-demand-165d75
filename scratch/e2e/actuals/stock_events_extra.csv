@@ -1,0 +1,4 @@
+stock_event_id,station_id,part_id,occurred_at,kind,quantity
+XSE1,S4,P1,2025-05-19T16:00:00+08:00,return,1
+XSE2,S2,P1,2025-05-04T16:00:00+08:00,return,1
+XSE3,S2,P1,2025-04-29T16:00:00+08:00,return,1

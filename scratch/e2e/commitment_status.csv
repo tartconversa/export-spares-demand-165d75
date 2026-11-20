@@ -1,0 +1,12 @@
+commitment_id,kind,from,to,part_id,quantity,eta,arrived_by_review
+C0001,redirect,-,S2,P1,6,2025-05-21 00:00:00+08:00,True
+C0002,redirect,-,S2,P1,6,2025-05-21 00:00:00+08:00,True
+C0003,redirect,-,S3,P2,6,2025-05-21 00:00:00+08:00,True
+C0004,redirect,-,S1,P4,6,2025-05-21 00:00:00+08:00,True
+C0005,purchase,-,S5,P2,13,2025-04-28 08:00:00+08:00,True
+C0006,purchase,-,S3,P2,13,2025-04-28 08:00:00+08:00,True
+C0007,purchase,-,S4,P2,13,2025-04-28 08:00:00+08:00,True
+C0008,purchase,-,S1,P2,7,2025-04-28 08:00:00+08:00,True
+C0009,purchase,-,S2,P1,25,2025-04-27 08:00:00+08:00,True
+C0010,purchase,-,S2,P2,7,2025-04-28 08:00:00+08:00,True
+C0011,purchase,-,S2,P4,14,2025-04-30 08:00:00+08:00,True

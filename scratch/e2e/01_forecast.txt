@@ -1,0 +1,113 @@
+# 截点 2025-04-21T08:00:00+08:00 后 90 天故障预测
+
+## 站×代际×环境 故障数（均值与 50%/90% 区间）
+station_id generation environment  units  failures_mean  failures_p25  failures_p75  failures_p05  failures_p95
+        S1         G1       humid     20          12.73         11.00          15.0           7.0          18.0
+        S1         G2       humid     20          12.48          9.75          15.0           6.0          18.0
+        S2         G1         dry     20          11.15          8.00          14.0           4.0          18.0
+        S2         G2         dry     20          12.47         10.00          15.0           5.0          18.0
+        S3         G1       humid     20          12.62         10.00          15.0           7.0          18.0
+        S3         G2       humid     20          12.45         10.00          15.0           6.0          18.0
+        S4         G1         dry     20          11.00          8.00          14.0           4.0          17.0
+        S4         G2         dry     20          12.59         10.00          15.0           6.0          19.0
+        S5         G1       humid     20          12.56         10.00          15.0           7.0          18.0
+        S5         G2       humid     20          12.52         10.00          15.0           7.0          18.0
+
+## 站×物料 备件需求（含现有积压，均值与区间）
+station_id part_id  demand_mean  demand_p25  demand_p75  demand_p05  demand_p95  includes_backlog
+        S1      P1        13.48       10.75        16.0         7.0        19.0              True
+        S1      P2        14.73       13.00        17.0         9.0        20.0              True
+        S1      P4        13.48       10.75        16.0         7.0        19.0              True
+        S2      P1        18.47       16.00        21.0        11.0        24.0              True
+        S2      P2        12.15        9.00        15.0         5.0        19.0              True
+        S2      P4        18.47       16.00        21.0        11.0        24.0              True
+        S3      P1        14.45       12.00        17.0         8.0        20.0              True
+        S3      P2        13.62       11.00        16.0         8.0        19.0              True
+        S3      P4        14.45       12.00        17.0         8.0        20.0              True
+        S4      P1        13.59       11.00        16.0         7.0        20.0              True
+        S4      P2        13.00       10.00        16.0         6.0        19.0              True
+        S4      P4        13.59       11.00        16.0         7.0        20.0              True
+        S5      P1        14.52       12.00        17.0         9.0        20.0              True
+        S5      P2        13.56       11.00        16.0         8.0        19.0              True
+        S5      P4        14.52       12.00        17.0         9.0        20.0              True
+
+## 截点未结工单积压（确定的待满足需求）
+order_id station_id part_id  need_qty  consequence                 failed_at
+      W7         S1      P2         1            1 2025-03-09 08:00:00+08:00
+     W14         S5      P4         1            1 2025-03-11 08:00:00+08:00
+     W14         S5      P1         1            1 2025-03-11 08:00:00+08:00
+     W21         S4      P2         1            1 2025-03-14 08:00:00+08:00
+     W28         S3      P4         1            1 2025-03-16 08:00:00+08:00
+     W28         S3      P1         1            1 2025-03-16 08:00:00+08:00
+     W35         S2      P2         1            1 2025-03-18 08:00:00+08:00
+     W42         S1      P4         1            1 2025-03-21 08:00:00+08:00
+     W42         S1      P1         1            1 2025-03-21 08:00:00+08:00
+     W49         S5      P2         1            1 2025-03-23 08:00:00+08:00
+     W50         S2      P4         1            1 2025-03-23 08:00:00+08:00
+     W50         S2      P1         1            1 2025-03-23 08:00:00+08:00
+     W56         S4      P4         1            1 2025-03-25 08:00:00+08:00
+     W56         S4      P1         1            1 2025-03-25 08:00:00+08:00
+     W60         S2      P4         1            1 2025-03-27 08:00:00+08:00
+     W60         S2      P1         1            1 2025-03-27 08:00:00+08:00
+     W63         S3      P2         1            3 2025-03-28 08:00:00+08:00
+     W70         S2      P4         1            1 2025-03-30 08:00:00+08:00
+     W70         S2      P1         1            1 2025-03-30 08:00:00+08:00
+     W77         S1      P2         1            1 2025-04-01 08:00:00+08:00
+     W80         S2      P4         1            1 2025-04-02 08:00:00+08:00
+     W80         S2      P1         1            1 2025-04-02 08:00:00+08:00
+     W84         S5      P4         1            1 2025-04-04 08:00:00+08:00
+     W84         S5      P1         1            1 2025-04-04 08:00:00+08:00
+     W90         S2      P4         1            3 2025-04-06 08:00:00+08:00
+     W90         S2      P1         1            3 2025-04-06 08:00:00+08:00
+     W91         S4      P2         1            1 2025-04-06 08:00:00+08:00
+     W98         S3      P4         1            1 2025-04-08 08:00:00+08:00
+     W98         S3      P1         1            1 2025-04-08 08:00:00+08:00
+    W100         S2      P4         1            1 2025-04-09 08:00:00+08:00
+    W100         S2      P1         1            1 2025-04-09 08:00:00+08:00
+
+## 账面消耗 vs 真实故障需求（替代抬高/缺货遮挡偏差）
+part_id  gross_issued  returned  true_failure_demand  occluded_demand_units  net_consumed
+     P1            38       9.0                   50                     12          29.0
+     P2            43       0.0                   50                      7          43.0
+     P4            38       0.0                   50                     12          38.0
+
+## 缺货遮挡清单
+order_id station_id required_group candidate_parts                 failed_at   state  consequence        occlusion_cause             evidence
+      W7         S1           main           P2,P3 2025-03-09 08:00:00+08:00 waiting            1 backlog_reason_unknown {'P2': 15, 'P3': 15}
+     W14         S5           main              P1 2025-03-11 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P1': 14}
+     W14         S5            aux              P4 2025-03-11 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 14}
+     W21         S4           main              P2 2025-03-14 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P2': 13}
+     W28         S3           main              P1 2025-03-16 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P1': 14}
+     W28         S3            aux              P4 2025-03-16 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 13}
+     W35         S2           main           P2,P3 2025-03-18 08:00:00+08:00 waiting            1 backlog_reason_unknown {'P2': 12, 'P3': 15}
+     W42         S1           main              P1 2025-03-21 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P1': 11}
+     W42         S1            aux              P4 2025-03-21 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 11}
+     W49         S5           main              P2 2025-03-23 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P2': 11}
+     W50         S2           main              P1 2025-03-23 08:00:00+08:00 waiting            1    stockout_registered       P1:unavailable
+     W50         S2            aux              P4 2025-03-23 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 11}
+     W56         S4           main              P1 2025-03-25 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P1': 11}
+     W56         S4            aux              P4 2025-03-25 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 10}
+     W60         S2           main              P1 2025-03-27 08:00:00+08:00 waiting            1    stockout_registered       P1:unavailable
+     W60         S2            aux              P4 2025-03-27 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 11}
+     W63         S3           main           P2,P3 2025-03-28 08:00:00+08:00 waiting            3 backlog_reason_unknown  {'P2': 9, 'P3': 15}
+     W70         S2           main              P1 2025-03-30 08:00:00+08:00 waiting            1    stockout_registered       P1:unavailable
+     W70         S2            aux              P4 2025-03-30 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 11}
+     W77         S1           main           P2,P3 2025-04-01 08:00:00+08:00 waiting            1 backlog_reason_unknown  {'P2': 9, 'P3': 15}
+     W80         S2           main              P1 2025-04-02 08:00:00+08:00 waiting            1    stockout_registered       P1:unavailable
+     W80         S2            aux              P4 2025-04-02 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 11}
+     W84         S5           main              P1 2025-04-04 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P1': 10}
+     W84         S5            aux              P4 2025-04-04 08:00:00+08:00 waiting            1 backlog_reason_unknown            {'P4': 8}
+     W90         S2           main              P1 2025-04-06 08:00:00+08:00 waiting            3    stockout_registered       P1:unavailable
+     W90         S2            aux              P4 2025-04-06 08:00:00+08:00 waiting            3 backlog_reason_unknown           {'P4': 11}
+     W91         S4           main              P2 2025-04-06 08:00:00+08:00 waiting            1 backlog_reason_unknown            {'P2': 7}
+     W98         S3           main              P1 2025-04-08 08:00:00+08:00 waiting            1 backlog_reason_unknown            {'P1': 9}
+     W98         S3            aux              P4 2025-04-08 08:00:00+08:00 waiting            1 backlog_reason_unknown            {'P4': 7}
+    W100         S2           main              P1 2025-04-09 08:00:00+08:00 waiting            1    stockout_registered       P1:unavailable
+    W100         S2            aux              P4 2025-04-09 08:00:00+08:00 waiting            1 backlog_reason_unknown           {'P4': 11}
+
+## 可信度与假设登记
+- 故障在固定协变量下服从齐次泊松过程（按龄期桶分段常数），这是资料未直接证实的建模假设；日频计数近似常数但样本仅34天。
+- 代际/环境效应采用经验贝叶斯收缩，小样本单元向全网同龄期桶靠拢；资料中代际×环境故障率差异很小，收缩后差异更弱。
+- 未观测到重复故障（每台至多1单），预测按伯努利过程处理：每台设备在窗内至多故障一次，概率由龄期分层强度 1-exp(-λ) 给出；窗内已故障设备是否再发无资料支持，按不再发处理属保守下限。
+- 情景参数 failure_multiplier 作为外部假设线性缩放故障率，其与航线延迟的关联只在 plans 情景内成对出现，不假设站点间独立或相关。
+- 在途批次在 [earliest, latest] 上按均匀分布建模；资料只给区间未给分布，这是可由用户检查/替换的假设，不代表已观测概率。

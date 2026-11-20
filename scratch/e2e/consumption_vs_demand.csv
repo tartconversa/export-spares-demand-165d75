@@ -1,0 +1,4 @@
+part_id,gross_issued,returned,true_failure_demand,occluded_demand_units,net_consumed
+P1,38,9.0,50,12,29.0
+P2,43,0.0,50,7,43.0
+P4,38,0.0,50,12,38.0

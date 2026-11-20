@@ -1,0 +1,119 @@
+{
+  "borrows": [],
+  "purchases": [
+    {
+      "commitment_id": "C0001",
+      "kind": "redirect",
+      "mode": "redirect",
+      "station_id": "S2",
+      "part_id": "P1",
+      "quantity": 6,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-05-21T00:00:00+08:00",
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "ref_shipment": "H8"
+    },
+    {
+      "commitment_id": "C0002",
+      "kind": "redirect",
+      "mode": "redirect",
+      "station_id": "S2",
+      "part_id": "P1",
+      "quantity": 6,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-05-21T00:00:00+08:00",
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "ref_shipment": "H4"
+    },
+    {
+      "commitment_id": "C0003",
+      "kind": "redirect",
+      "mode": "redirect",
+      "station_id": "S3",
+      "part_id": "P2",
+      "quantity": 6,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-05-21T00:00:00+08:00",
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "ref_shipment": "H5"
+    },
+    {
+      "commitment_id": "C0004",
+      "kind": "redirect",
+      "mode": "redirect",
+      "station_id": "S3",
+      "part_id": "P2",
+      "quantity": 6,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-05-21T00:00:00+08:00",
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "ref_shipment": "H1"
+    },
+    {
+      "commitment_id": "C0005",
+      "kind": "redirect",
+      "mode": "redirect",
+      "station_id": "S2",
+      "part_id": "P4",
+      "quantity": 6,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-05-21T00:00:00+08:00",
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "ref_shipment": "H3"
+    },
+    {
+      "commitment_id": "C0006",
+      "kind": "purchase",
+      "mode": "expedite",
+      "station_id": "S5",
+      "part_id": "P2",
+      "quantity": 34,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-04-28T08:00:00+08:00",
+      "unit_cost": 500.0,
+      "fee": 4080.0
+    },
+    {
+      "commitment_id": "C0007",
+      "kind": "purchase",
+      "mode": "expedite",
+      "station_id": "S1",
+      "part_id": "P2",
+      "quantity": 29,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-04-28T08:00:00+08:00",
+      "unit_cost": 500.0,
+      "fee": 3480.0
+    },
+    {
+      "commitment_id": "C0008",
+      "kind": "purchase",
+      "mode": "expedite",
+      "station_id": "S2",
+      "part_id": "P2",
+      "quantity": 27,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-04-28T08:00:00+08:00",
+      "unit_cost": 500.0,
+      "fee": 3240.0
+    },
+    {
+      "commitment_id": "C0009",
+      "kind": "redirect",
+      "mode": "redirect",
+      "station_id": "S2",
+      "part_id": "P4",
+      "quantity": 6,
+      "commit_at": "2025-04-21T08:00:00+08:00",
+      "eta": "2025-05-21T00:00:00+08:00",
+      "unit_cost": 0.0,
+      "fee": 600.0,
+      "ref_shipment": "H7"
+    }
+  ]
+}

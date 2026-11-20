@@ -1,0 +1,61 @@
+# 保障方案（情景 normal，预算 60000 元）
+
+## 选优过程（每步的加权按时恢复与积压）
+ step                      action    cash  on_time_weighted  expected_backlog_units
+    0                     (基线无动作)     0.0            0.7211                   17.61
+    1        redirect:P1x6@S2(H4)   600.0            0.7474                    7.76
+    2        redirect:P1x6@S2(H8)   600.0            0.7559                    4.71
+    3        redirect:P2x6@S3(H1)   600.0            0.7577                    4.15
+    4        redirect:P4x6@S1(H3)   600.0            0.7589                    3.73
+    5 expedite:P2x13@S5(expedite)  8060.0            0.7690                    3.27
+    6 expedite:P2x13@S3(expedite)  8060.0            0.7771                    3.27
+    7 expedite:P2x13@S4(expedite)  8060.0            0.7847                    3.04
+    8  expedite:P2x7@S1(expedite)  4340.0            0.7884                    2.58
+    9 expedite:P1x25@S2(expedite) 11250.0            0.7957                    2.58
+   10  expedite:P2x7@S2(expedite)  4340.0            0.7985                    2.35
+   11 expedite:P4x14@S2(expedite) 13440.0            0.8060                    1.82
+
+## 选定动作
+- redirect P1 x6 @ S2 ref=H4 资金=600 到达=2025-05-21 | 批次 H4 改港 S5->S2
+- redirect P1 x6 @ S2 ref=H8 资金=600 到达=2025-05-21 | 批次 H8 改港 S4->S2
+- redirect P2 x6 @ S3 ref=H1 资金=600 到达=2025-05-21 | 批次 H1 改港 S2->S3
+- redirect P4 x6 @ S1 ref=H3 资金=600 到达=2025-05-21 | 批次 H3 改港 S4->S1
+- expedite P2 x13 @ S5 ref=expedite 资金=8,060 到达=2025-04-28 | expedite 交期 7 天，补 P95 缺口 13 件
+- expedite P2 x13 @ S3 ref=expedite 资金=8,060 到达=2025-04-28 | expedite 交期 7 天，补 P95 缺口 13 件
+- expedite P2 x13 @ S4 ref=expedite 资金=8,060 到达=2025-04-28 | expedite 交期 7 天，补 P95 缺口 13 件
+- expedite P2 x7 @ S1 ref=expedite 资金=4,340 到达=2025-04-28 | expedite 交期 7 天，补 P95 缺口 7 件
+- expedite P1 x25 @ S2 ref=expedite 资金=11,250 到达=2025-04-27 | expedite 交期 6 天，补 P95 缺口 25 件
+- expedite P2 x7 @ S2 ref=expedite 资金=4,340 到达=2025-04-28 | expedite 交期 7 天，补 P95 缺口 7 件
+- expedite P4 x14 @ S2 ref=expedite 资金=13,440 到达=2025-04-30 | expedite 交期 9 天，补 P95 缺口 14 件
+
+## 方案评估
+加权按时恢复概率: 0.806
+单量按时恢复概率: 0.806
+加权 SLA 违约期望: 0.194
+窗末期望积压(件): 1.82
+资金占用: 59,950 / 预算 60,000 （预算内）
+
+## 分站指标
+station_id  on_time_weighted  on_time_unweighted  expected_backlog_units
+        S1             0.826               0.812                   0.265
+        S2             0.722               0.734                   0.000
+        S3             0.793               0.827                   0.530
+        S4             0.852               0.837                   0.520
+        S5             0.839               0.820                   0.505
+
+## 边际预算价值（追加预算改善哪里）
+ budget  on_time_weighted  expected_backlog_units  cash_committed worst_station
+60000.0             0.806                   1.940         59950.0            S2
+65000.0             0.808                   1.820         64900.0            S2
+70000.0             0.809                   1.820         68200.0            S2
+80000.0             0.816                   1.315         79390.0            S2
+
+## 假设登记
+- 新故障在预测窗内均匀发生；资料只覆盖34天且日计数近似常数，无法识别窗内季节性。
+- 后果权重沿用历史工单的站点分布抽样。
+- 在途与改港到达在区间内均匀抽样；互借运输时长为显式参数（默认 3 天），资料未提供真实运输数据。
+- 同路线批次共享 route_delay_days 情景迟延；不同路线是否共同受扰，资料不支持独立假设，情景内按同一区域事件处理，情景间不做相关性推断。
+- 采购在承诺日按交期确定到达（单点估计），交期本身的不确定性未建模；加急对情景迟延减半敏感是显式假设。
+- 先坏先修（FCFS）占用站点供给；资料未提供派工优先级规则，优化器按后果权重选动作，但仿真内不做人工插队。
+
+快照已保存：/workspace/scratch/e2e/plan_snapshot.json
